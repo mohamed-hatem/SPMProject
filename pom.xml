@@ -25,6 +25,7 @@
     <version>4.3.0</version>
     <configuration>
         <repoToken>V5aeo57GTa7qBz6FtUTBHo60LYzO0mZIT</repoToken>
+        <jacocoReports>target/site/jacoco/jacoco/jacoco.xml</jacocoReports>
     </configuration>
 </plugin>
 <plugin>
