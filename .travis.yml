@@ -1,7 +1,14 @@
 language: java
 jdk: oraclejdk8
 sudo: false # faster builds
+env:
+-CODECOV_TOKEN="6c60e5f5-646a-4da7-b913-fa0c7ee59954"
+install:
+  - mvn test-compile -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+  
 script:
-  - mvn clean package
+  - mvn clean jacoco:prepare-agent install jacoco:report
+  - mvn test jacoco:report
 after_success:
   - bash <(curl -s https://codecov.io/bash)
+  - mvn coveralls:report
