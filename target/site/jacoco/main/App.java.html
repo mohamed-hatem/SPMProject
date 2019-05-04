@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>App.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">SPMProject</a> &gt; <a href="index.source.html" class="el_package">main</a> &gt; <span class="el_source">App.java</span></div><h1>App.java</h1><pre class="source lang-java linenums">package main;
+
+import java.util.ArrayList;
+
+<span class="nc" id="L5">public class App {</span>
+<span class="fc" id="L6">private static ArrayList&lt;Game&gt; gameList = new ArrayList&lt;Game&gt;();</span>
+	
+	public static Boolean addGame(Game game)
+<span class="fc bfc" id="L9" title="All 2 branches covered.">	{   if(game==null)</span>
+<span class="fc" id="L10">		return false;</span>
+<span class="pc bpc" id="L11" title="1 of 2 branches missed.">		if(gameList.add(game))</span>
+<span class="fc" id="L12">			return true;</span>
+		
+<span class="nc" id="L14">		return false;</span>
+	}
+
+	
+<span class="fc" id="L18">	private static ArrayList&lt;Student&gt; studentList = new ArrayList&lt;Student&gt;();</span>
+	
+<span class="fc" id="L20">	public static ArrayList&lt;Teacher&gt; Teacherlist=new ArrayList&lt;Teacher&gt;() ;</span>
+	
+
+	
+	public static boolean addStudent(Student student) {
+<span class="pc bpc" id="L25" title="1 of 2 branches missed.">		if(studentList.add(student))</span>
+<span class="fc" id="L26">			return true;</span>
+		
+<span class="nc" id="L28">		return false;</span>
+	}	
+
+	public static boolean SignUp(int choise) {
+
+<span class="fc bfc" id="L33" title="All 2 branches covered.">		if(choise==1){</span>
+<span class="fc" id="L34">			Student student = new Student(&quot;AHMED&quot;,15,&quot;Audh7dhfhue&quot;,&quot;ahmed@gjin&quot;);</span>
+<span class="fc" id="L35">			addStudent(student);</span>
+<span class="fc" id="L36">			return true;</span>
+		}
+	
+<span class="fc bfc" id="L39" title="All 2 branches covered.">		else if(choise==2){</span>
+<span class="fc" id="L40">			addTeacher(&quot;AG&quot;,&quot;ag@mail&quot;,&quot;27&quot;,&quot;AGPASSWORD&quot;);</span>
+<span class="fc" id="L41">			return true;</span>
+		}
+		
+<span class="fc" id="L44">		return false; </span>
+	}
+
+	public static boolean addTeacher(String name,String email,String age,String password) {
+<span class="fc" id="L48">		Teacher t=new Teacher();</span>
+<span class="fc" id="L49">		t.setName(name);</span>
+<span class="fc" id="L50">		t.setAge(age);</span>
+<span class="fc" id="L51">		t.setEmail(email);</span>
+<span class="fc" id="L52">		t.setPassword(password);</span>
+	
+<span class="fc" id="L54">		return Teacherlist.add(t);	</span>
+	}
+
+	public static boolean login(String email,String password)
+	{
+<span class="pc bfc" id="L59" title="All 2 branches covered.">		for(int i=0;i&lt;Teacherlist.size();i++){</span>
+			
+<span class="pc bpc" id="L61" title="2 of 4 branches missed.">			if(Teacherlist.get(i).getEmail().equals(email)==true&amp;&amp;Teacherlist.get(i).getPassword().equals(password)==true){</span>
+<span class="fc" id="L62">				return true;</span>
+			}		
+		}
+	
+<span class="fc bfc" id="L66" title="All 2 branches covered.">		for(int i=0; i&lt;studentList.size();i++) {</span>
+			
+<span class="pc bpc" id="L68" title="1 of 4 branches missed.">			if(studentList.get(i).getEmail().equals(email)==true&amp;&amp;studentList.get(i).getPassword().equals(password)==true){</span>
+<span class="fc" id="L69">				return true;</span>
+			}
+		}
+	
+<span class="fc" id="L73">	return false;</span>
+	}
+	
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.3.201901230119</span></div></body></html>
