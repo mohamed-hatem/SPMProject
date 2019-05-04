@@ -1,8 +1,6 @@
 language: java
 jdk: oraclejdk8
 sudo: false # faster builds
-env:
--CODECOV_TOKEN="6c60e5f5-646a-4da7-b913-fa0c7ee59954"
 install:
   - mvn test-compile -DskipTests=true -Dmaven.javadoc.skip=true -B -V
   
