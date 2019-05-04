@@ -6,7 +6,9 @@ install:
   
 script:
   - mvn clean jacoco:prepare-agent install jacoco:report
-  - mvn test jacoco:report
+  - mvn test
 after_success:
   - bash <(curl -s https://codecov.io/bash)
   - mvn coveralls:report
+  - mvn clean test jacoco:report coveralls:report
+  

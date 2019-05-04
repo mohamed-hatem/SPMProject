@@ -10,4 +10,4 @@ RUN mvn install
 FROM openjdk:8-jre-alpine
 WORKDIR /app
 COPY --from=build /app/target/SPMProject-0.0.1-SNAPSHOT.jar /app
-CMD ["java -jar spring-petclinic-1.5.1.jar"]
+CMD ["java -jar SPMProject-0.0.1-SNAPSHOT.jar"]
