@@ -3,4 +3,4 @@ Github repo : https://github.com/mohamed-hatem/SPMProjecthttps:/
 Coveralls : https://coveralls.io/repos
 Travis : https://travis-ci.org/mohamed-hatem/SPMProject
 CodeCoverage :  https://codecov.io/gh/mohamed-hatem/SPMProject/commit/7f0db219177bf58bb87bf302e521cfae6bbebcd8/build
-+
++==
